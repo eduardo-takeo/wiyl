@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(120deg, #5e8de8, #3f1ea2);
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.main-container {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.location-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.temperature-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 25px;
+    margin: 60px 0px;
+}
