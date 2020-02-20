@@ -11,7 +11,7 @@ const storeLocation = (position) => {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
 
-    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`)
         .then(response => response.json())
         .then(data => {
             weatherApi = data;
@@ -22,7 +22,7 @@ const storeLocation = (position) => {
 
 const setData = () => {
     document.getElementById('location').innerHTML = weatherApi.name;
-    document.getElementById('icon').innerHTML = `<img src="http://openweathermap.org/img/wn/${weatherApi.weather[0].icon}@2x.png" alt="icon">`;
+    document.getElementById('icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${weatherApi.weather[0].icon}@2x.png" alt="icon">`;
     document.getElementById('temperature').innerHTML = Math.round(weatherApi.main.temp / 10);
     document.getElementById('description').innerHTML = weatherApi.weather[0].description.charAt(0).toUpperCase() + weatherApi.weather[0].description.slice(1);
 }
