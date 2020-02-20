@@ -23,7 +23,7 @@ const storeLocation = (position) => {
 const setData = () => {
     document.getElementById('location').innerHTML = weatherApi.name;
     document.getElementById('icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${weatherApi.weather[0].icon}@2x.png" alt="icon">`;
-    document.getElementById('temperature').innerHTML = Math.round(weatherApi.main.temp / 10);
+    document.getElementById('temperature').innerHTML = Math.round(weatherApi.main.temp / 10) + '°C';
     document.getElementById('description').innerHTML = weatherApi.weather[0].description.charAt(0).toUpperCase() + weatherApi.weather[0].description.slice(1);
 }
 
