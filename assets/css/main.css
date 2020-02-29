@@ -1,13 +1,21 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
 }
 
 body {
-    width: 100vw;
+    font-family: 'Nunito', sans-serif;
+}
+
+main {
+    width: 100%;
     height: 100vh;
-    background-image: linear-gradient(120deg, #5e8de8, #3f1ea2);
-    font-family: 'Raleway', sans-serif;
+    background-image: linear-gradient(to right bottom, #5e8de8, #3f1ea2);    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,48 +23,93 @@ body {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 6rem;
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 3rem;
 }
 
-.main-container {
-    width: 60%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+/* ANIMATED ICON */
+.icon {
+    position: relative;
+    display: inline-block;
+    width: 20rem;
+    height: 20rem;
+    font-size: 1rem; /* control icon size here */
+  }
+  
+.cloud {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 3.6875em;
+  height: 3.6875em;
+  margin: -1.84375em;
+  background: currentColor;
+  border-radius: 50%;
+  box-shadow:
+    -2.1875em 0.6875em 0 -0.6875em,
+    2.0625em 0.9375em 0 -0.9375em,
+    0 0 0 0.375em #fff,
+    -2.1875em 0.6875em 0 -0.3125em #fff,
+    2.0625em 0.9375em 0 -0.5625em #fff;
+}
+.cloud:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -0.5em;
+  display: block;
+  width: 4.5625em;
+  height: 1em;
+  background: currentColor;
+  box-shadow: 0 0.4375em 0 -0.0625em #fff;
+}
+.cloud:nth-child(2) {
+  z-index: 0;
+  background: #fff;
+  box-shadow:
+    -2.1875em 0.6875em 0 -0.6875em #fff,
+    2.0625em 0.9375em 0 -0.9375em #fff,
+    0 0 0 0.375em #fff,
+    -2.1875em 0.6875em 0 -0.3125em #fff,
+    2.0625em 0.9375em 0 -0.5625em #fff;
+  opacity: 0.3;
+  transform: scale(0.5) translate(6em, -3em);
+  animation: cloud 4s linear infinite;
 }
 
-.location-container {
+.initial__container {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bolder;
-}
-
-.temperature-container {
-    display: flex;
     flex-direction: column;
+}
+
+.main__container {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
+
+    display: none;
 }
 
-#temperature {
-    margin: 10px 0px;
+/* ANIMATIONS */ 
+@keyframes cloud {
+  0% { opacity: 0; }
+  50% { opacity: 0.3; }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) translate(-200%, -3rem);
+  }
 }
 
+/* MEDIA QUERIES */
 @media screen and (max-width: 700px) {
-    .main-container {
-        width: 90%;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1em;
+    html {
+        font-size: 50%;
     }
 }

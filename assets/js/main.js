@@ -21,9 +21,11 @@ const storeLocation = (position) => {
 }
 
 const setData = () => {
-    document.getElementById('location').innerHTML = weatherApi.name;
-    document.getElementById('icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${weatherApi.weather[0].icon}@2x.png" alt="icon">`;
-    document.getElementById('temperature').innerHTML = Math.round(weatherApi.main.temp / 10) + '°C';
-    document.getElementById('description').innerHTML = weatherApi.weather[0].description.charAt(0).toUpperCase() + weatherApi.weather[0].description.slice(1);
-}
+    document.getElementsByClassName('initial__container')[0].style.display = 'none';
+    document.getElementsByClassName('main__container')[0].style.display = 'flex';
 
+    document.getElementById('location__name').innerHTML = weatherApi.name;
+    document.getElementById('location__icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${weatherApi.weather[0].icon}@2x.png" alt="icon">`;
+    document.getElementById('temperature__value').innerHTML = Math.round(weatherApi.main.temp / 10) + '°C';
+    document.getElementById('temperature__description').innerHTML = weatherApi.weather[0].description.charAt(0).toUpperCase() + weatherApi.weather[0].description.slice(1);
+}

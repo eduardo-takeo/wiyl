@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WIYL</title>
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="main-container">
-        <div class="location-container">
-            <h1 id="location">London</h1>
-            <div id="icon"><img src="https://openweathermap.org/img/wn/10d@2x.png" alt="default_icon"></div>
+    <main>
+        <!-- INITIAL LOGO -->
+        <div class="initial__container">
+            <div class="icon cloudy">
+                <div class="cloud"></div>
+                <div class="cloud"></div>
+            </div>
+
+            <h2>We're looking outside for you...One sec</h2>
         </div>
-        <div class="temperature-container">
-            <h2 id="temperature">23</h2>
-            <h2 id="description">Mostly cloudy</h2>
+
+        <!-- MAIN -->
+        <div class="main__container">
+            <h1 id="location__name">London</h1>
+            <img id="location__icon" src="https://openweathermap.org/img/wn/10d@2x.png" alt="location_icon">
+            <h2 id="temperature__value">23</h2>
+            <h2 id="temperature__description">Mostly cloudy</h2>
         </div>
-    </div>
+    </main>
 
     <script src="assets/js/main.js"></script>
 </body>
