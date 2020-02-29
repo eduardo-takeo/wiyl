@@ -93,6 +93,7 @@ h2 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    animation: moveUp 2s ease;
 
     display: none;
 }
@@ -107,9 +108,21 @@ h2 {
   }
 }
 
+@keyframes moveUp {
+    0% {
+        transform: translateY(20rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 700px) {
     html {
-        font-size: 50%;
+        font-size: 40%;
     }
 }
